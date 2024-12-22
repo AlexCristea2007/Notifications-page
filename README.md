@@ -2,6 +2,8 @@
 
 This project implements a notification system with dynamic updates. It fetches notification data from a JSON file, displays it in a list, and allows the user to mark all notifications as read or mark individual notifications as read. The project uses HTML, CSS (SCSS), and JavaScript.
 
+![Example Image](notifications-page-main/design/desktop-design.jpg)
+
 ## Features
 
 - **Fetch Notifications**: Data is fetched from a `data.json` file and displayed dynamically.
