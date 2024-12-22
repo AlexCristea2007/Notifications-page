@@ -1,0 +1,166 @@
+* > *,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Plus Jakarta Sans", sans;
+  line-height: 1.5rem;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  background-color: hsl(210, 60%, 98%);
+  padding-block: 50px;
+}
+
+.app-wrapper {
+  width: 800px;
+  max-width: 90%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: initial;
+  align-items: start;
+  gap: 50px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 10px;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.header .amount {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.header .amount p, .header .amount div {
+  font-weight: 800;
+  font-size: 25px;
+  color: hsl(224, 21%, 14%);
+}
+.header .amount div {
+  padding: 3px 12px;
+  border-radius: 6px;
+  font-size: 20px;
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(219, 85%, 26%);
+}
+.header .all-read-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: hsl(219, 14%, 63%);
+}
+.header .all-read-btn:hover {
+  color: hsl(219, 85%, 26%);
+}
+@media (max-width: 450px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 10px;
+  }
+}
+
+.notification-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 10px;
+}
+.notification-list li {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  gap: 10px;
+  padding: 20px;
+  background-color: transparent;
+  border-radius: 10px;
+}
+.notification-list li.unread {
+  background-color: hsl(211, 68%, 94%);
+  cursor: pointer;
+}
+.notification-list li .profile-image {
+  width: 55px;
+  height: 55px;
+}
+.notification-list li section {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.notification-list li section .message {
+  color: hsl(219, 12%, 42%);
+}
+.notification-list li section .message .name, .notification-list li section .message .subject {
+  font-weight: 800;
+  color: hsl(224, 21%, 14%);
+  margin-right: 5px;
+  text-decoration: none;
+}
+.notification-list li section .message .name:hover, .notification-list li section .message .subject:hover {
+  color: hsl(219, 85%, 26%);
+}
+.notification-list li section .message .subject {
+  color: hsl(219, 12%, 42%);
+  margin-left: 5px;
+}
+.notification-list li section .message .unread-mark {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: hsl(1, 90%, 64%);
+}
+.notification-list li section .message .date {
+  display: block;
+  margin-top: 10px;
+  color: var();
+}
+.notification-list li section .content p, .notification-list li section .content .header .amount div, .header .amount .notification-list li section .content div {
+  color: hsl(219, 12%, 42%);
+  padding: 15px;
+  border: 1px solid hsl(219, 12%, 42%);
+  border-radius: 8px;
+  cursor: pointer;
+}
+.notification-list li section .content p:hover, .notification-list li section .content .header .amount div:hover, .header .amount .notification-list li section .content div:hover {
+  background-color: hsl(205, 33%, 90%);
+  border-color: transparent;
+}
+.notification-list li section .content img {
+  width: 50px;
+  height: 50px;
+  border: 3px solid transparent;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.notification-list li section .content img:hover {
+  border-color: hsl(219, 14%, 63%);
+}/*# sourceMappingURL=style.css.map */

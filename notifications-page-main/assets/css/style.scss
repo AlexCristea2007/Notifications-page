@@ -1,0 +1,169 @@
+// Colors
+
+// Primary
+$red: hsl(1, 90%, 64%);
+$blue: hsl(219, 85%, 26%);
+
+// Neutral
+$white: hsl(0, 0%, 100%);
+$very-light-grayish-blue: hsl(210, 60%, 98%);
+$light-grayish-blue-1: hsl(211, 68%, 94%);
+$light-grayish-blue-2: hsl(205, 33%, 90%);
+$grayish-blue: hsl(219, 14%, 63%);
+$dark-grayish-blue: hsl(219, 12%, 42%);
+$very-dark-blue: hsl(224, 21%, 14%);
+
+// Font
+$fsH1: 25px;
+$fsP: 16px;
+$fw500: 500;
+$fw800: 800;
+$ff: "Plus Jakarta Sans", sans;
+
+* > *,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: $fsP;
+  font-weight: $fw500;
+  font-family: $ff;
+  line-height: 1.5rem;
+}
+
+@mixin flex($direction, $jus, $ali, $gap) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $jus;
+  align-items: $ali;
+  gap: $gap;
+}
+
+body {
+  min-height: 100vh;
+  @include flex(row, center, center, 0);
+  background-color: $very-light-grayish-blue;
+  padding-block: 50px;
+}
+
+.app-wrapper {
+  width: 800px;
+  max-width: 90%;
+  padding: 20px;
+  @include flex(column, initial, start, 50px);
+  background-color: $white;
+  border-radius: 10px;
+}
+
+.header {
+  width: 100%;
+  @include flex(row, space-between, center, 20px);
+  .amount {
+    @include flex(row, center, center, 10px);
+    p {
+      font-weight: $fw800;
+      font-size: $fsH1;
+      color: $very-dark-blue;
+    }
+    div {
+      padding: 3px 12px;
+      border-radius: 6px;
+      @extend p;
+      font-size: 20px;
+      color: $white;
+      background-color: $blue;
+    }
+  }
+  .all-read-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: $grayish-blue;
+    &:hover {
+      color: $blue;
+    }
+  }
+  @media (max-width: 450px) {
+    @include flex(column, center, start, 10px);
+  }
+}
+
+.notification-list {
+  @include flex(column, center, start, 10px);
+  li {
+    width: 100%;
+    @include flex(row, start, start, 10px);
+    padding: 20px;
+    background-color: transparent;
+    border-radius: 10px;
+    &.unread {
+      background-color: $light-grayish-blue-1;
+      cursor: pointer;
+    }
+    .profile-image {
+      $imageSize: 55px;
+      width: $imageSize;
+      height: $imageSize;
+    }
+    section {
+      width: 100%;
+      @include flex(row, space-between, start, 20px);
+      flex-wrap: wrap;
+      .message {
+        color: $dark-grayish-blue;
+        .name {
+          font-weight: $fw800;
+          color: $very-dark-blue;
+          margin-right: 5px;
+          text-decoration: none;
+          &:hover {
+            color: $blue;
+          }
+        }
+        .subject {
+          @extend .name;
+          color: $dark-grayish-blue;
+          margin-left: 5px;
+        }
+        .unread-mark {
+          display: inline-block;
+          $markSize: 10px;
+          width: $markSize;
+          height: $markSize;
+          border-radius: 50%;
+          background-color: $red;
+        }
+        .date {
+          display: block;
+          margin-top: 10px;
+          color: var();
+        }
+      }
+      .content {
+        p {
+          color: $dark-grayish-blue;
+          padding: 15px;
+          border: 1px solid $dark-grayish-blue;
+          border-radius: 8px;
+          cursor: pointer;
+          &:hover {
+            background-color: $light-grayish-blue-2;
+            border-color: transparent;
+          }
+        }
+        img {
+          $imgSize: 50px;
+          width: $imgSize;
+          height: $imgSize;
+          border: 3px solid transparent;
+          border-radius: 10px;
+          cursor: pointer;
+          &:hover {
+            border-color: $grayish-blue;
+          }
+        }
+      }
+    }
+  }
+}
